@@ -1,54 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
 }
 
 table {
+  font-family: 'Poppins', Arial, sans-serif;
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .csv-container {
+    max-height: none;
+    height: auto;
+  }
+}
+
+.csv-container {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #f1f1f1 #ddd;
+}
+
+.csv-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.csv-container::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+.csv-container::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.csv-container::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
 th, td {
+  font-family: 'Poppins', Arial, sans-serif;
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #E1EDF3A;
 }
 
 input[type="text"] {
+  font-family: 'Poppins', Arial, sans-serif;
   margin: 10px 0;
-  padding: 5px;
-  width: 100%;
+  padding: 10px;
+  width: calc(100% - 22px);
   box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #2196F3;
 }
 
 .App {
+  font-family: 'Poppins', Arial, sans-serif;
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
 }
 
 a {
-  color: blue;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: lightskyblue;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-.media-player {
-  margin-bottom: 20px;
-}
-
-audio, iframe {
-  width: 100%;
 }
 
 .light-mode {
@@ -62,7 +100,7 @@ audio, iframe {
 }
 
 .dark-mode th, .dark-mode td {
-  border: 1px solid #444;
+  border: 1px solid #bbb;
 }
 
 input[type="checkbox"] {
