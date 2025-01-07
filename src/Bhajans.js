@@ -126,7 +126,7 @@
 // }
 
 // export default CSVViewer;
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import { styled } from 'styled-components';
 import Papa from 'papaparse';
 import bhajanlist from './bhajanlist.csv';
@@ -285,6 +285,7 @@ const CSVViewer = () => {
   const [currentMp3, setCurrentMp3] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const audioRef = useRef(null);
   const itemsPerPage = 10;
 
   useEffect(() => {
@@ -310,6 +311,14 @@ const CSVViewer = () => {
       setIsDarkMode(JSON.parse(savedTheme));
     }
   }, []);
+  useEffect(() => {
+    if (currentMp3 && audioRef.current) {
+      audioRef.current.play().catch(error => {
+        console.log('Auto-play failed:', error);
+        // Handle auto-play failure (might occur due to browser policies)
+      });
+    }
+  }, [currentMp3]);
 
   const filteredData = searchTerm
     ? data.filter(row =>
@@ -343,7 +352,7 @@ const CSVViewer = () => {
   return (
     <Container $isDark={isDarkMode}>
       <Header>
-        <Title>Bhajan List</Title>
+        <Title>Bhajans List</Title>
         <ThemeToggle $isDark={isDarkMode} onClick={toggleTheme}>
           {isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </ThemeToggle>
