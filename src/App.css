@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
+ 
 }
 
 table {
@@ -72,9 +73,9 @@ input[type="text"]:focus {
 
 .App {
   font-family: 'Poppins', Arial, sans-serif;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  /* max-width: 800px; */
+  /* margin: 20px auto; */
+  /* padding: 20px; */
 }
 
 a {
@@ -89,6 +90,7 @@ a:hover {
 
 .light-mode {
   background-color: white;
+  /* background-color: black; */
   color: black;
 }
 

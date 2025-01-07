@@ -16,11 +16,7 @@ function App() {
       <div className="App">
         <PersistentDrawerLeft />
         <nav>
-          {/* <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/csv-viewer">CSV Viewer</Link></li>
-          </ul> */}
+          
         </nav>
         <Routes>
           <Route path="/" element={<CSVViewer />} />
